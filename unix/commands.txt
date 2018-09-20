@@ -1,0 +1,8 @@
+
+find -name '*.zip' -exec sh -c 'unzip -d "${1%.*}" "$1"' _ {} \;
+
+  1. Unzip all .zip files 
+  2. Store the content 
+        in a new folder with the same name 
+        in the same folder as the .zip file:
+
