@@ -1,0 +1,47 @@
+What are components?
+  js functions
+  accept inputs (called 'props' as a convention)
+  return React elements
+
+How to create components?
+  one way is to create a function
+    accept single arguments (props)
+    return a React element
+  second way is to create a class
+
+How to render a component?
+  elements can render user-defined components
+  e.g.
+    const element = <Welcome name="Sara" />;
+
+  <Welcome> is a user-defined component
+
+  When React sees an element representing
+  a user-defined component, 
+  it passes JSX attributes to this component
+  as a single object. 
+  We call this object 'props'
+  All JSX attributes are passed as props
+  The JSX attribute 'name' is retrieved by 
+    using props.name
+  Component names must begin with uppercase letter  
+    lowercase are treated as html tags
+
+Composing components
+  Components can refer to 
+    other components in their output
+
+Extracting components
+  Split a component into smaller components
+    for code re-use
+  Props should be named from the 
+    point of view of the component
+    and not the context in which it is being used
+
+When to create a new component?
+  If part of UI is reusable
+  or if it is complex enough on its own
+  
+All React components must act like
+  pure functions with respect to their props
+  (i.e. don't modify props inside the component)

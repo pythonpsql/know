@@ -1,0 +1,52 @@
+Components defined as classes (not functions) 
+  have a special property called state
+  
+How to convert a component function to a class?
+  1. Create an ES6 class to extend React.Component
+  2. Add a single empty method: render()
+  3. Move the body of function to render method
+  4. Replace props with this.props
+  5. Remove remaining empty function declaration
+
+How to add state to a class?
+  1. Replace this.props to this.state
+  2. Assign initial value to this.state 
+      in the class constructor
+  3. call base constructor with props
+      e.g. super(props)
+
+How to add lifecycle methods to a class?
+  The methods which mount and unmount components
+    are called lifecycle hooks
+  this.props is set up by React itself,
+  this.state has a special meaning,
+  other properties can be set on 'this' by us
+
+How to modify state?
+  this.state should be assigned only in the constructor
+  If you modify state directly,
+    the component will not be re-rendered
+  So always use setState()
+  state updates are merged
+    state may contain several variables
+    these variable can be updated independently
+      with setState()
+    it completely replaces the variable updated,
+      though other variables are untouched
+ 
+Unidirectional/Top-Down data flow
+  1. Neither parent nor child can know
+      if a component is stateful or stateless
+      whether it is defined as function or class
+  2. A component may choose to pass down its own
+      state as props to its child components
+  3. Any data or UI derived from state can only affect
+      components below them
+  
+
+How to use state?
+  state updates may be asynchronous
+  So, their values should not be relied upon
+  so pass (state, props) arguments in setState() and
+    then use their values
+
