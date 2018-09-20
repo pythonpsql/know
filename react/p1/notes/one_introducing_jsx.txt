@@ -1,0 +1,85 @@
+How to start a React project?
+  1. mkdir p1
+  2. create-react-app one
+  3. cd one
+  4. yarn upgrade --latest react-scripts
+      current purpose was to use CSS modules
+
+What is JSX? 
+  React does not require using JSX
+  It helps as a visual aid when working with UI inside js
+  Allows React to show more useful erros and warnings
+  Rendering logic is inherently coupled
+    with other UI logic: 
+      how events are handled,
+      how the state changes over time,
+      and how the data is prepared for display.
+  Instead of separating technologies:
+    markup (like HTML) and logic (like js),
+    React separates concerns with components that
+      contain both markup and logic
+  For convention, 
+    one may rename files containing jsx code
+    with .jsx extension
+  JSX can contain
+    any valid js expression inside curly braces
+      An expression is any valid unit of code that
+      resolves to a value.
+  If JSX code is split into multiple lines, 
+    use paranthesis
+  JSX is also an expression
+    On compilation, they become js function calls
+      and evaluate to js objects
+    This means, JSX can be 
+      used inside 
+        if statements,
+        for loops
+      assigned to 
+        variables
+      accepted as
+        arguments
+      returned from
+        functions
+  Attributes can be specified using:
+    curly braces to enclose js expression
+    quotes to specify string literals 
+      string literals means 
+        string constant,
+        not string variable like string object
+  ReactDOM uses camelCase property naming convention
+  JSX tags may contain children
+    If no children, then close tag with '/>'
+  Prevents injection attacks
+    ReactDOM escapes any values embedded in JSX
+      Everything is converted to a string
+  JSX represents objects
+    Babel compiles JSX to React.createElement() calls
+    These objects are called React elements
+    React reads these objects and uses them 
+      to construct the DOM and update it
+  Example:
+    JSX
+      const element = (
+        <h1 className="greeting">
+          Hello, world!
+        </h1>
+        );
+
+    Babel compilation:
+      const element = React.createElement(
+        'h1',
+        {className: 'greeting'},
+        'Hello, world!'
+        );
+
+    Simpified structure of object created by createElement:
+      // Note: this structure is simplified
+      const element = {
+        type: 'h1',
+        props: {
+          className: 'greeting',
+          children: 'Hello, world!'
+        }
+      };
+  For correct syntax highlighting of ES6 and JSX,
+    Babel language definition must be used by editor
