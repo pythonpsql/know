@@ -1,7 +1,0 @@
-How to start a React project?
-  1. mkdir p1
-  2. create-react-app one
-  3. cd one
-  4. yarn upgrade --latest react-scripts
-      (current purpose for upgrading was to use CSS modules)
-  
