@@ -1,0 +1,32 @@
+1. React events are named using camelCase
+2. A function can be passed as the event handler
+3. preventDefault() must be called explicitly
+4. A common pattern:
+    event handler is a method on the class
+5. In js, class methods are not bound by default
+      this means, we must pass 'this' to class methods
+   Even though we call the method using this.methodname,
+    still we must bind it with 'this' like:
+      this.handleclick.bind(this)
+   With binding, we tell the function 
+   on which bind() is applied to use the 'this' from the
+   first argument in bind function
+
+   There are other options to using bind, 
+    public class fields syntax is experimental
+    arrow function does extra re-rendering
+6. Extra arguments can be passed to event handlers like
+      <button onClick={(e) => this.deleteRow(id, e)}>
+      Delete Row</button>
+
+      <button onClick={this.deleteRow.bind(this, id)}>
+      Delete Row</button>
+
+   Both the above statements are equivalents
+   Note that in arrow function, we are working with (e),
+   which means (e) is passed to it
+
+   bind function always passes 
+   any further arguments automatically after 'this' 
+   and its own arguments
+   so e is passed after (this, id)
